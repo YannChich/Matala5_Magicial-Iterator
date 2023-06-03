@@ -1,145 +1,213 @@
-/*
-"MagicalContainer" that can store integers representing mystical elements. 
-Implement necessary methods for adding elements, removing elements, and retrieving the size of the container. 
-You can use a dynamic array or any other suitable data structure for internal storage.
-*/
+#include "MagicalContainer.hpp"
 
-#pragma once
-#include <vector> // dynamic array for internal storage
+using namespace std;
+using namespace ariel;
 
-class MagicalContainer {
-private:
-    std::vector<int> Container;
-    std::vector<int> Ascending_Container;
-    std::vector<int> Prime_Container;
-    std::vector<int> Cross_Container;
+void MagicalContainer::updateAscending() {
+    
+}
 
-/*
-Every time we are using the function addEelement we need to update the other Container
-We will update the Ascending_Container , Prime and Cross.
-*/
-    void updateAscending();
-    void updatePrime();
-    void updateCross();
+void MagicalContainer::updatePrime() {
+    
+}
 
-// We are going to use the function isPrime for the Prime_Container
-    bool isPrime(int number);
+void MagicalContainer::updateCross() {
+    
+}
 
-/*
-We dont want the same element in our Container , checking if he is there or not
-Example : The vector is : 1 14 8 9 6 , we are trying the add now 6 : we are not adding 6  
-*/ 
-    bool isExist(int number);
+bool MagicalContainer::isPrime(int number) {
+    
+    return false;
+}
 
-public:
-    void addElement(int element);
+bool MagicalContainer::isExist(int number) {
+    
+    return false;
+}
 
-    void removeElement(int element);
+void MagicalContainer::addElement(int element) {
+    
+}
 
-    unsigned int getSize() const {
-        return Container.size();
-    }
-// We dont need to create the operators for MagicalContainer because we are using vector from C++
+void MagicalContainer::removeElement(int element) {
+   
+}
 
-    // The ascendingIterator going to allow traversal of elements in the MagicalContainer class in ascending order (sorted)
-   class AscendingIterator {
-    private:
-    // current it's like a ptr , we are going to use current to travel on our Container
-    std::vector<int>::iterator current;
+MagicalContainer::AscendingIterator::AscendingIterator() {
+   
+}
 
-    public:
-    // Default constructor : I let the compiler create the default constructor
+MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &Mcontainer) {
+   
+}
 
-    // Parameter constructor
-    AscendingIterator(std::vector<int>::iterator start);
+MagicalContainer::AscendingIterator::AscendingIterator(const AscendingIterator& other) {
+  
+}
 
-    // Copy Constructor
-    AscendingIterator(const AscendingIterator& other);
+MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operator=(const AscendingIterator& other) {
+  
+    return *this;
+}
 
-    // We don't need a destructor for this class
-    ~AscendingIterator() {}
+bool MagicalContainer::AscendingIterator::operator==(const AscendingIterator& other) const {
+   
+    return false;
+}
 
-    // Operator = 
-    AscendingIterator& operator=(const AscendingIterator& other);
+bool MagicalContainer::AscendingIterator::operator!=(const AscendingIterator& other) const {
+  
+    return false;
+}
 
-    // Operator ==
-    bool operator==(const AscendingIterator& other) const;
+bool MagicalContainer::AscendingIterator::operator>(const AscendingIterator& other) const {
+   
+    return false;
+}
 
-    // Operator !=
-    bool operator!=(const AscendingIterator& other) const;
+bool MagicalContainer::AscendingIterator::operator<(const AscendingIterator& other) const {
+ 
+    return false;
+}
 
-    // Operator >
-    bool operator>(const AscendingIterator& other) const;
+int MagicalContainer::AscendingIterator::operator*() const {
 
-    // Operator <
-    bool operator<(const AscendingIterator& other);
+    return 0;
+}
 
-    // Operator * (like a ptr)
-    int operator*() const;
-    // Operator ++
-    AscendingIterator& operator++();
+MagicalContainer::AscendingIterator& MagicalContainer::AscendingIterator::operator++() {
+   
+    return *this;
+}
 
-};
-    // Returns the appropriate iterator (ascending, cross, or prime) pointing to the first element of the container based on the specified type.
-    AscendingIterator begin_ascending();
+MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
+    
+    return AscendingIterator();
+}
 
-    // Returns the appropriate iterator (ascending, cross, or prime) pointing one position past the last element of the container based on the specified type.
-    AscendingIterator end_ascending();
+MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
+    
+    return AscendingIterator();
+}
+
+MagicalContainer::SideCrossIterator::SideCrossIterator() {
+
+}
+
+MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &Mcontainer) {
+
+}
+
+MagicalContainer::SideCrossIterator::SideCrossIterator(const SideCrossIterator& other) {
+
+}
+
+MagicalContainer::SideCrossIterator::~SideCrossIterator() {
+
+}
+
+MagicalContainer::SideCrossIterator& MagicalContainer::SideCrossIterator::operator=(const SideCrossIterator& other) {
+    return *this;
+}
+
+bool MagicalContainer::SideCrossIterator::operator==(const SideCrossIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::SideCrossIterator::operator!=(const SideCrossIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::SideCrossIterator::operator>(const SideCrossIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::SideCrossIterator::operator<(const SideCrossIterator& other) const {
+
+    return false;
+}
+
+int MagicalContainer::SideCrossIterator::operator*() const {
+
+    return 0;
+}
+
+MagicalContainer::SideCrossIterator& MagicalContainer::SideCrossIterator::operator++() {
+
+    return *this;
+}
+
+MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
+    
+    return SideCrossIterator();
+}
+
+MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
+    
+    return SideCrossIterator();
+}
+
+MagicalContainer::PrimeIterator::PrimeIterator() {
+
+}
+
+MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &Mcontainer) {
+
+}
+
+MagicalContainer::PrimeIterator::PrimeIterator(const PrimeIterator& other) {
+
+}
+
+MagicalContainer::PrimeIterator::~PrimeIterator() {
+
+}
+
+MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::operator=(const PrimeIterator& other) {
+    return *this;
+}
+
+bool MagicalContainer::PrimeIterator::operator==(const PrimeIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::PrimeIterator::operator!=(const PrimeIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::PrimeIterator::operator>(const PrimeIterator& other) const {
+
+    return false;
+}
+
+bool MagicalContainer::PrimeIterator::operator<(const PrimeIterator& other) const {
+
+    return false;
+}
+
+int MagicalContainer::PrimeIterator::operator*() const {
+
+    return 0;
+}
+
+MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::operator++() {
+
+    return *this;
+}
+
+MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() {
+    
+    return PrimeIterator();
+}
+
+MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
+    
+    return PrimeIterator();
+}
 
 
-/*
-SideCrossIterator going to allow traversal of elements in the MagicalContainer class with a special order 
-Example : Container : 1 2 4 5 14  with the SideCross we got : 1 14 2 5 4
-We are starting from the begin and the end we are going to do this until we are arrive in the "midle" of the Container
-*/
-    class SideCrossIterator {
-    private:
-    std::vector<int>::iterator current;
-
-    public:
-    SideCrossIterator();
-    SideCrossIterator(std::vector<int>::iterator start);
-    SideCrossIterator(const SideCrossIterator& other);
-    ~SideCrossIterator();
-
-    SideCrossIterator& operator=(const SideCrossIterator& other);
-    bool operator==(const SideCrossIterator& other) const;
-    bool operator!=(const SideCrossIterator& other) const;
-    bool operator>(const SideCrossIterator& other) const;
-    bool operator<(const SideCrossIterator& other) const;
-    int operator*() const;
-    SideCrossIterator& operator++();
-};
-
-    SideCrossIterator begin_sidecross();
-    SideCrossIterator end_sidecross();
-
-/*
-PrimeIterator going to allow traversal of elements in the MagicalContainer class only on Prime numbers
-Example : Container : 1 2 4 5 14 with PrimeIterator we got : 2 5
-We are goign to use a function IsPrime
-*/
-    class PrimeIterator {
-    private:
-    std::vector<int>::iterator current;
-
-    public:
-    PrimeIterator();
-    PrimeIterator(std::vector<int>::iterator start);
-    PrimeIterator(const PrimeIterator& other);
-    ~PrimeIterator();
-
-    PrimeIterator& operator=(const PrimeIterator& other);
-    bool operator==(const PrimeIterator& other) const;
-    bool operator!=(const PrimeIterator& other) const;
-    bool operator>(const PrimeIterator& other) const;
-    bool operator<(const PrimeIterator& other) const;
-    int operator*() const;
-    PrimeIterator& operator++();
-};
-    // Returns the appropriate iterator (ascending, cross, or prime) pointing to the first element of the container based on the specified type.
-    PrimeIterator begin_prime();
-    // Returns the appropriate iterator (ascending, cross, or prime) pointing one position past the last element of the container based on the specified type.
-    PrimeIterator end_prime();
-
-};
